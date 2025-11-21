@@ -14,6 +14,7 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 		- [Built with](#built-with)
 		- [What I learned](#what-i-learned)
 	- [Author](#author)
+- [CONTACT-FORM](#contact-form)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -37,6 +38,7 @@ Users should be able to:
 ![Desktop-view-1](image.png)
 ![Desktop-view-2](image-3.png)
 ![Desktop-authenticate](image-4.png)
+![Desktop-success-message](image-6.png)
 
 ![Mobile-view](image-5.png)
 
