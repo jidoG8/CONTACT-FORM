@@ -5,18 +5,16 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 ## Table of contents
 
 - [Frontend Mentor - Contact form solution](#frontend-mentor---contact-form-solution)
-	- [Table of contents](#table-of-contents)
-	- [Overview](#overview)
-		- [The challenge](#the-challenge)
-		- [Screenshot](#screenshot)
-		- [Links](#links)
-	- [My process](#my-process)
-		- [Built with](#built-with)
-		- [What I learned](#what-i-learned)
-	- [Author](#author)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+  - [Author](#author)
 - [CONTACT-FORM](#contact-form)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -44,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Checkout the source code here.](https://github.com/jidoG8/CONTACT-FORM.git)
+- Live Site URL: [View the live project](https://jidog8.github.io/CONTACT-FORM/)
 
 ## My process
 
@@ -144,4 +142,5 @@ allOptions.forEach(function (option) {
 - Frontend Mentor - [@jidoG8](https://www.frontendmentor.io/profile/jidoG8)
 - Twitter - [@OjjaC1253](https://x.com/OjjaC1253)
 - LinkedIn - [@ojja-caesar](https://www.linkedin.com/in/ojja-caesar-134980345/)
+
 # CONTACT-FORM
