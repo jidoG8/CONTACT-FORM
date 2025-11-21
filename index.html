@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Contact form</title>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<main>
+			<!-- FEEDBACK/THANK YOU PAGE -->
+			<section class="feedback hidden">
+				<section class="header">
+					<img
+						src="./assets/images/icon-success-check.svg"
+						alt="icon-success-check"
+					/>
+					<h2 class="feedback-title">Message Sent!</h2>
+				</section>
+				<p class="feedback-text">
+					Thanks for completing the form. We'll be in touch soon!
+				</p>
+			</section>
+
+			<form action="" class="contact-form">
+				<h1 class="form-title">Contact Us</h1>
+				<section class="name-fields">
+					<section class="user-input">
+						<label for="fname">First Name <span class="asterik">*</span></label>
+						<input
+							type="text"
+							aria-describedby="fname"
+							id="fname"
+							name="fname"
+						/><span class="invalid-fname"></span>
+					</section>
+					<section class="user-input">
+						<label for="lname">Last Name <span class="asterik">*</span></label>
+						<input
+							type="text"
+							aria-describedby="lname"
+							id="lname"
+							name="lname"
+						/>
+						<span class="invalid-lname"></span>
+					</section>
+				</section>
+				<label for="lname">Email Address <span class="asterik">*</span></label>
+				<input type="email" aria-describedby="lname" id="email" name="lname" />
+				<span class="invalid-email"></span>
+				<fieldset class="radio-btn">
+					<legend>Query Type<span class="asterik">*</span></legend>
+					<section class="radio-btn-border radio-option">
+						<input
+							type="radio"
+							name="query-type"
+							id="general-inquiry"
+							class="selection-option"
+						/>
+						<label for="general-inquiry" class="radio-btn-label"
+							>General Inquiry</label
+						>
+					</section>
+					<section class="radio-btn-border radio-option">
+						<input
+							type="radio"
+							name="query-type"
+							id="support-request"
+							class="selection-option"
+						/>
+						<label for="support-request" class="radio-btn-label"
+							>Support Request</label
+						>
+					</section>
+				</fieldset>
+				<span class="fname-input-error"></span>
+
+				<fieldset class="message-wrapper">
+					<legend>Message<span class="asterik">*</span></legend>
+					<textarea name="message" id="message"> </textarea>
+					<span class="required-comments"></span>
+				</fieldset>
+				<section class="user-agreement">
+					<input type="checkbox" name="consent" id="consent" />
+					<label for="consent"
+						>I consent to being contacted by the team<span class="asterik"
+							>*</span
+						></label
+					>
+				</section>
+				<span class="required-consent"></span>
+				<button type="submit">Submit</button>
+			</form>
+		</main>
+		<script src="./index.js"></script>
+	</body>
+</html>

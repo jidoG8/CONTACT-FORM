@@ -1,0 +1,365 @@
+/* 
+	@date: 2025/11/19
+	@description: Frontend Mentor | Contact form 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@layer global, theme, modules;
+@layer global {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	body {
+		font-family: "Karla", sans-serif;
+		font-size: clamp(1rem, calc(1rem + 0.1878vw), 1.125rem);
+		background-color: var(--green200);
+	}
+
+	fieldset legend {
+		font-size: var(--body-fsize);
+		margin-bottom: 0.5em;
+	}
+
+	label {
+		margin-bottom: 0.3em;
+	}
+
+	label,
+	legend {
+		color: var(--label-color);
+		font-weight: var(--fw400);
+	}
+
+	input {
+		width: 100%;
+		max-width: 100%;
+		border: var(--input-border);
+		border-radius: var(--bradius);
+		font-size: var(--body-fsize);
+		font-weight: var(--fw400);
+	}
+	input:hover {
+		cursor: pointer;
+		border-color: var(--green600);
+	}
+
+	main {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		padding: clamp(0.5rem, 2vh, 1em) 0;
+	}
+
+	textarea {
+		width: 100%;
+		max-width: 100%;
+		min-height: 30vh;
+		border: var(--input-border);
+		border-radius: var(--bradius);
+		padding: 0.6em;
+		padding-inline: clamp(0.75rem, 3vw, 1.5rem);
+		box-sizing: border-box;
+		font-size: var(--body-fsize);
+		font-weight: var(--fw400);
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin: 0;
+		padding: 0;
+		width: var(--radio-size);
+		height: var(--radio-size);
+		accent-color: var(--green600);
+		cursor: pointer;
+	}
+
+	/* Disabled state */
+	input[type="checkbox"]:disabled,
+	input[type="radio"]:disabled {
+		accent-color: var(--grey500);
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	/* Active/Checked state */
+	input[type="checkbox"]:checked,
+	input[type="radio"]:checked {
+		accent-color: var(--green600);
+	}
+
+	button {
+		padding: 0.6em;
+		margin-block-start: 1em;
+		background-color: var(--green600);
+		border: none;
+		border-radius: var(--bradius);
+		color: var(--white);
+		font-size: var(--body-fsize);
+		letter-spacing: clamp(0.05em, 1vw, 0.2em);
+		width: 100%;
+	}
+	button:hover {
+		background-color: var(--grey900);
+		cursor: pointer;
+	}
+
+	input:not([type="radio"]):not([type="checkbox"]),
+	input,
+	button[type="submit"],
+	textarea {
+		padding: var(--input-padding);
+	}
+
+	input:not([type="radio"]):not([type="checkbox"]) {
+		padding-inline: clamp(0.75rem, 3vw, 1.5rem);
+	}
+
+	h1 {
+		margin-block: 0;
+		padding-block: 0;
+		color: var(--grey900);
+	}
+}
+
+@layer theme {
+	:root {
+		/* primary */
+		--green200: hsl(148, 38%, 91%);
+		--green600: hsl(169, 82%, 27%);
+		--red: #d73c3c;
+		--error-color: #f5c7c7;
+
+		/* Neutral */
+		--white: hsl(0, 0%, 100%);
+		--grey500: hsl(186, 15%, 59%);
+		--grey900: #3b595e;
+		--label-color: #3e5e65;
+
+		/* typography */
+		--fw600: 600;
+		--fw700: 700;
+		--fw400: 400;
+		--fsize: 1em;
+		--input-padding: clamp(0.5rem, calc(0.5rem + 0.5vw), 1rem);
+		--body-fsize: clamp(1rem, calc(1rem + 0.1878vw), 1.125rem);
+		--radio-size: clamp(1rem, calc(1rem + 0.1878vw), 1.125rem);
+		--bradius: 0.4em;
+		--input-border: 0.125rem solid var(--grey500);
+	}
+}
+
+@layer modules {
+	.contact-form {
+		background-color: var(--white);
+		margin: clamp(0.5rem, 2vw, 1em) auto;
+		border-radius: 0.5em;
+
+		display: flex;
+		flex-direction: column;
+
+		/* Mobile-first: 90% width with max constraint */
+		width: 90%;
+		max-width: 23.438rem;
+		padding: clamp(1rem, 4vw, 2.5rem);
+		overflow: visible;
+
+		/* Create positioning context */
+		position: relative;
+	}
+
+	.name-fields {
+		display: block;
+		gap: clamp(0.5rem, 2vw, 1em);
+		margin-block-end: clamp(0.25rem, 1vw, 0.5em);
+	}
+
+	.name-fields label {
+		display: block;
+		margin-block: 0.5em;
+	}
+
+	.radio-btn {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 0;
+		margin-top: 1em;
+		border: none;
+	}
+
+	.radio-option {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		gap: clamp(0.25rem, 2vw, 0.5em);
+		border: 0.0625rem solid var(--grey500);
+		border-radius: var(--bradius);
+
+		padding: clamp(0.5rem, 2vw, 0.75em);
+	}
+	.radio-option:hover,
+	.user-input:hover {
+		cursor: pointer;
+	}
+
+	input[type="radio"] label {
+		padding: 0;
+		margin: 0;
+	}
+	input[type="radio"] {
+		padding: 0;
+		margin: 0;
+	}
+
+	.user-agreement {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.5em;
+		margin-block-start: 1em;
+		padding: 0;
+	}
+
+	.radio-btn {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 0;
+		margin-top: 1em;
+		border: none;
+	}
+
+	.message-wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		border: none;
+		margin-block-start: 1em;
+	}
+
+	.required-comments {
+		margin-block-start: 0;
+	}
+
+	/* hide feedback */
+	.feedback {
+		/* Step 2: Initially hidden */
+		display: none;
+		background-color: var(--grey900);
+		color: var(--white);
+
+		/* Step 3: Position at top edge of contact-form */
+		position: absolute;
+		top: 0.5em;
+		left: 50%;
+		transform: translateX(-50%);
+
+		/* Step 4: Mobile width - 80% */
+		width: min(80%, 100%);
+
+		border-radius: var(--bradius);
+		padding-inline: 0.75em;
+		padding-block: 1em;
+		font-size: 1rem;
+		z-index: 10;
+	}
+
+	.feedback p {
+		margin-block-start: 0.5em;
+	}
+
+	.feedback .header {
+		display: flex;
+		gap: 0.5em;
+		align-items: center;
+		margin: 0;
+		padding: 0.25em 0;
+		box-sizing: border-box;
+	}
+
+	/* Remove default margins from heading elements inside header */
+	.feedback .header h2,
+	.feedback .header h3,
+	.feedback .header img {
+		margin: 0;
+		padding: 0;
+	}
+
+	.feedback .header h2,
+	.feedback .header h3 {
+		font-size: 1rem;
+	}
+
+	/* Ensure all text in feedback uses 1rem */
+	.feedback * {
+		font-size: 1rem;
+	}
+
+	.asterik {
+		color: var(--green600);
+		padding-inline-start: 0.5em;
+	}
+
+	.radio-btn-label {
+		font-weight: var(--fw600);
+	}
+
+	.radio-btn-border,
+	#message {
+		border: var(--input-border);
+	}
+
+	/* Smaller screens optimization */
+	@media (max-width: 29.938rem) {
+		.contact-form {
+			width: 90%;
+			max-width: 20.438rem;
+		}
+	}
+	@media (min-width: 48rem) {
+		.name-fields {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+		}
+		.name-fields section {
+			flex: 1;
+		}
+		.contact-form {
+			width: 90%;
+			max-width: 55rem;
+		}
+
+		.radio-btn {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: row;
+			gap: 1em;
+		}
+
+		textarea {
+			min-height: 15vh;
+		}
+
+		.radio-option {
+			flex: 1;
+		}
+
+		/* Desktop width - 30% */
+		.feedback {
+			width: 30%;
+		}
+	}
+}
